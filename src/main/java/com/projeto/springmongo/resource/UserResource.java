@@ -1,6 +1,7 @@
 package com.projeto.springmongo.resource;
 
 import com.projeto.springmongo.domain.User;
+import com.projeto.springmongo.dto.UserDTO;
 import com.projeto.springmongo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ public class UserResource {
     private UserService service;
 
     @GetMapping
-    public ResponseEntity<List<User>> findAll() {
+    public ResponseEntity<List<UserDTO>> findAll() {
         var list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
