@@ -1,5 +1,6 @@
 package com.projeto.springmongo.domain;
 
+import com.projeto.springmongo.dto.UserDTO;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -44,6 +45,15 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public static User fromDTO(UserDTO dto){
+        User user = new User();
+        user.setId(dto.getId());
+        user.setEmail(dto.getEmail());
+        user.setName(dto.getName());
+
+        return user;
     }
 
     @Override

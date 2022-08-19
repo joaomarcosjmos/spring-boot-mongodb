@@ -31,4 +31,12 @@ public class UserService {
         }
         return user.get();
     }
+
+    public User insert(User user) {
+        return repository.insert(user);
+    }
+
+    public User froDTO(UserDTO dto) {
+        return new User(dto.getId(), dto.getName(), dto.getEmail());
+    }
 }
