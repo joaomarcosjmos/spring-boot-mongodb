@@ -1,5 +1,7 @@
 package com.projeto.springmongo.resources;
 
+import com.projeto.springmongo.domain.Post;
+import com.projeto.springmongo.domain.User;
 import com.projeto.springmongo.dto.UserDTO;
 import com.projeto.springmongo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +49,11 @@ public class UserResource {
         user.setId(id);
         service.update(user);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("{id}/posts")
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+        var entity = service.findById(id);
+        return ResponseEntity.ok().body(entity.getPosts());
     }
 }
