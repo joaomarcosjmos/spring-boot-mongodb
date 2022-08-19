@@ -8,10 +8,10 @@ public class UserDTO {
     private String name;
     private String email;
 
-    public UserDTO(){
+    public UserDTO() {
     }
 
-    public UserDTO(User user){
+    public UserDTO(User user) {
         id = user.getId();
         name = user.getName();
         email = user.getEmail();
@@ -41,11 +41,11 @@ public class UserDTO {
         this.email = email;
     }
 
-    public static UserDTO convert(User user){
+    public static UserDTO convert(User user) {
         UserDTO userDTO = new UserDTO();
         userDTO.setId(user.getId());
         userDTO.setName(user.getName());
-        userDTO.setEmail( user.getEmail());
+        userDTO.setEmail(user.getEmail());
 
         return userDTO;
     }

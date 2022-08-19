@@ -1,7 +1,6 @@
 package com.projeto.springmongo.resources;
 
 import com.projeto.springmongo.domain.Post;
-import com.projeto.springmongo.domain.User;
 import com.projeto.springmongo.dto.UserDTO;
 import com.projeto.springmongo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
